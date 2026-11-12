@@ -1,0 +1,306 @@
+[
+  {
+    "id": "tc-hinglish-os",
+    "title": "Operating Systems: Process Synchronization (Hinglish)",
+    "language": "Hindi-English (Hinglish)",
+    "langCode": "hi",
+    "raw_transcript": "Haan toh students, aaj hum Operating Systems mein process synchronization discuss karenge. Basically dekho, jab multi-programming environment hota hai, toh multiple processes concurrently execute hote hain. Agar do processes same shared variable ko simultaneously access aur modify karein, toh us situation ko hum bolte hain Race Condition. Is race condition se bachne ke liye humein Critical Section Problem solve karni padti hai. Critical Section woh code block hai jahan shared resources access hote hain. Iske teen essential rules hote hain: pehla Mutual Exclusion, matlab ek time pe sirf ek process andar ja sakta hai. Doosra Progress, matlab agar koi process critical section mein nahi hai, toh baaki processes decide kar sakte hain kaun jayega bina unnecessary delay ke. Aur teesra Bounded Waiting, matlab kisi process ko infinite time tak bhukha nahi rehna padega yaani starvation avoid karna hai. Isko implement karne ke liye hum Mutex locks aur Counting Semaphores use karte hain. Mutex basically ek binary lock hota hai jisme ownership hoti hai, jabki Semaphore ek integer variable hota hai jisko wait() aur signal() atomic operations ke through control kiya jata hai.",
+    "clean_transcript": "Welcome students. Today we discuss Process Synchronization in Operating Systems. In a multiprogramming environment, multiple processes execute concurrently. When two processes simultaneously access and modify a shared resource, a Race Condition occurs. To prevent race conditions, we must solve the Critical Section Problem. The critical section is the code segment where shared memory or resources are accessed. Any valid solution must satisfy three core conditions: 1) Mutual Exclusion: only one process can execute in its critical section at any given time. 2) Progress: if no process is in the critical section, only processes wishing to enter can participate in selecting who enters next. 3) Bounded Waiting: there must be a limit on the number of times other processes are allowed to enter their critical sections after a process has requested entry, thereby preventing starvation. We implement this using Mutex Locks (binary mechanisms with ownership) and Semaphores (integer variables managed atomically via wait() and signal()).",
+    "summary": "This lecture explains concurrency control and process synchronization in operating systems. It defines race conditions and details the critical section problem along with its three mandatory criteria: mutual exclusion, progress, and bounded waiting. The instructor then introduces mutex locks and counting semaphores as practical synchronization primitives.",
+    "concepts": [
+      {
+        "term": "Race Condition",
+        "explanation": "A flaw where the outcome of concurrent operations depends on the arbitrary execution order or timing of competing processes."
+      },
+      {
+        "term": "Critical Section",
+        "explanation": "A designated region of code that accesses shared memory or hardware that must not be concurrently accessed by multiple threads."
+      },
+      {
+        "term": "Mutual Exclusion",
+        "explanation": "The requirement that if one process is executing inside its critical section, no other process may be admitted."
+      },
+      {
+        "term": "Progress Requirement",
+        "explanation": "Ensures that selection of the next process to enter the critical section cannot be postponed indefinitely by inactive processes."
+      },
+      {
+        "term": "Bounded Waiting",
+        "explanation": "A bound on the number of entries granted to other processes before a waiting process's request is fulfilled, preventing starvation."
+      },
+      {
+        "term": "Mutex Lock",
+        "explanation": "A mutual exclusion locking mechanism with ownership, behaving like a binary key for single-thread critical section access."
+      },
+      {
+        "term": "Counting Semaphore",
+        "explanation": "An integer synchronization primitive modified solely via atomic wait() and signal() operations to govern finite resource pools."
+      }
+    ],
+    "questions": [
+      {
+        "q": "What is a race condition in multi-threaded programming?",
+        "model_answer": "A race condition occurs when two or more processes concurrently access and modify shared data, causing the final output to depend unpredictably on execution order."
+      },
+      {
+        "q": "Name the three mandatory conditions required to solve the critical section problem.",
+        "model_answer": "The three requirements are Mutual Exclusion, Progress, and Bounded Waiting."
+      },
+      {
+        "q": "What is the primary difference between a Mutex and a Semaphore?",
+        "model_answer": "A Mutex is a locking mechanism with thread ownership allowing only one process at a time, whereas a Semaphore is a signaling integer counter for multiple resources."
+      },
+      {
+        "q": "Why is the Bounded Waiting condition essential?",
+        "model_answer": "It is essential because it guarantees that a waiting process will eventually gain access, preventing indefinite postponement or starvation."
+      },
+      {
+        "q": "Why must the wait() and signal() operations on semaphores be executed atomically?",
+        "model_answer": "They must be atomic to ensure that no context switch interrupts the integer decrement or increment, avoiding race conditions on the semaphore itself."
+      }
+    ],
+    "sample_student_answers": [
+      {
+        "question_index": 0,
+        "input": "Jab multiple processes ek hi variable ko saath mein change karte hain aur output unpredictable ho jata hai.",
+        "expected_verdict": "correct"
+      },
+      {
+        "question_index": 1,
+        "input": "Mutual exclusion aur progress, teesra yaad nahi aa raha.",
+        "expected_verdict": "partial"
+      },
+      {
+        "question_index": 2,
+        "input": "Mutex memory allocate karta hai jabki semaphore CPU clock speed control karta hai.",
+        "expected_verdict": "wrong"
+      }
+    ]
+  },
+  {
+    "id": "tc-tanglish-ml",
+    "title": "Machine Learning: Gradient Descent & Optimization (Tanglish)",
+    "language": "Tamil-English (Tanglish)",
+    "langCode": "ta",
+    "raw_transcript": "Vanakkam pa, inaiku Machine Learning session la Gradient Descent pathi clear ah paakalam. Oru Neural Network training la namma primary goal enna? Loss function ah minimize pannanum. Loss function na prediction kum actual ground-truth kum irukura difference error metric. Optimization la gradient calculate panrom. Gradient na slope, adhavadhu direction of steepest ascent. Namma loss ah reduce panna porom, so opposite direction la, negative gradient direction la step edukrom. Ippo weights update formula: W new = W old minus alpha times derivative of Loss with respect to W. Inga alpha thaan Learning Rate. Indha learning rate romba critical hyperparameter. Alpha romba high ah irundha, steps romba perisa poyi minimum ah overshoot pannidum, model diverge aagidum. Alpha romba small ah irundha, model train aaga romba hours edukum, local minima la stuck aagalam. Idhu thaan optimization oda core intuitive foundation.",
+    "clean_transcript": "Welcome everyone. In today's Machine Learning session, we explore the mechanics of Gradient Descent optimization. During neural network training, our primary objective is minimizing the loss function. The loss function quantifies the mathematical error between predicted outputs and ground-truth labels. To minimize this error, we calculate the gradient, which represents the vector of steepest ascent on the loss surface. Because our goal is loss reduction, we step in the negative gradient direction. The weight update formula is: W_new = W_old minus alpha times the gradient of the loss with respect to W. Here, alpha is the Learning Rate hyperparameter. Setting learning rate is critical: if alpha is excessively large, updates will overshoot the minimum and diverge; if alpha is too small, training convergence becomes extremely slow and may stall in suboptimal local minima.",
+    "summary": "This lecture explains the mathematical intuition and dynamics of Gradient Descent in Machine Learning. It details how neural network weights are iteratively adjusted opposite the gradient of the loss function, and examines the critical trade-offs in tuning the learning rate hyperparameter to avoid overshooting or slow convergence.",
+    "concepts": [
+      {
+        "term": "Loss Function",
+        "explanation": "A quantitative function measuring the error between model predictions and true target values to guide optimization."
+      },
+      {
+        "term": "Gradient",
+        "explanation": "A vector of partial derivatives pointing in the direction of greatest rate of increase of a multi-variable function."
+      },
+      {
+        "term": "Gradient Descent",
+        "explanation": "An iterative first-order optimization algorithm that steps in the negative gradient direction to find a local minimum."
+      },
+      {
+        "term": "Learning Rate (Alpha)",
+        "explanation": "A scalar hyperparameter that scales the magnitude of parameter updates at each optimization step."
+      },
+      {
+        "term": "Overshooting",
+        "explanation": "A failure mode where an excessively large learning rate causes step sizes to skip past the minimum and diverge."
+      },
+      {
+        "term": "Weight Update Rule",
+        "explanation": "The algorithmic formula adjusting parameters by subtracting the scaled gradient: W = W - alpha * dL/dW."
+      }
+    ],
+    "questions": [
+      {
+        "q": "What is the primary objective of a loss function in machine learning?",
+        "model_answer": "The primary objective is to measure the discrepancy between predictions and actual labels, providing a scalar score for the optimizer to minimize."
+      },
+      {
+        "q": "Why does gradient descent take steps in the negative direction of the gradient?",
+        "model_answer": "Because the gradient points in the direction of steepest increase, stepping in the negative direction guarantees the fastest descent towards the loss minimum."
+      },
+      {
+        "q": "What happens if the learning rate is set too high?",
+        "model_answer": "If set too high, the parameter updates become too large, causing the optimizer to overshoot the minimum and potentially diverge."
+      },
+      {
+        "q": "What is the consequence of configuring an extremely low learning rate?",
+        "model_answer": "An extremely low learning rate causes training to proceed very slowly, requiring impractical training time and risking getting trapped in plateaus."
+      },
+      {
+        "q": "State the standard gradient descent weight update equation.",
+        "model_answer": "W_new = W_old - (alpha * dL/dW), where alpha is the learning rate and dL/dW is the gradient of the loss with respect to weights."
+      }
+    ],
+    "sample_student_answers": [
+      {
+        "question_index": 2,
+        "input": "Alpha perusa irundha minimum ah thaandi overshoot aagi diverge aayidum.",
+        "expected_verdict": "correct"
+      },
+      {
+        "question_index": 1,
+        "input": "Loss kammi panna negative sign use panrom.",
+        "expected_verdict": "partial"
+      },
+      {
+        "question_index": 0,
+        "input": "Loss function image colors ah brightness panradhuku use aagudhu.",
+        "expected_verdict": "wrong"
+      }
+    ]
+  },
+  {
+    "id": "tc-english-ds",
+    "title": "Data Structures: Array Memory Layout & Big-O Notation (English)",
+    "language": "English (Indian Accent)",
+    "langCode": "en",
+    "raw_transcript": "Good morning class. Today we will break down array memory allocation and asymptotic Big-O analysis. An array is defined as a linear collection of elements of identical data types stored in contiguous memory locations. Because memory addresses are consecutive, the CPU can locate any element at index i using simple pointer arithmetic: address equals base address plus i times element size. This is why array index lookup is constant time, O(1). However, when we want to insert an element at index 0 or delete an element from the middle, all subsequent elements must be shifted in memory. Therefore, insertion and deletion take linear time, O(n). Additionally, contiguous storage provides exceptional spatial cache locality, allowing modern hardware to prefetch cache lines into L1 and L2 caches much faster than node-based linked lists.",
+    "clean_transcript": "Good morning class. Today we break down array memory allocation and asymptotic Big-O analysis. An array is a linear collection of identical data types stored in contiguous memory addresses. Because memory is contiguous, the CPU computes the address of any element at index i via direct pointer arithmetic: Base Address + (i * element_size). This guarantees constant time O(1) random access. Conversely, inserting or deleting elements at arbitrary indices forces subsequent elements to shift, requiring linear time O(n). Furthermore, contiguous memory layout provides superior spatial cache locality, enabling CPUs to prefetch adjacent data into L1/L2 caches far more efficiently than node-based structures like linked lists.",
+    "summary": "This lecture examines array architecture, focusing on contiguous physical memory allocation and its asymptotic time complexity implications. It highlights why indexing achieves O(1) constant time, explains the O(n) overhead of element shifting during insertions/deletions, and explains the hardware advantage of spatial cache locality.",
+    "concepts": [
+      {
+        "term": "Contiguous Memory",
+        "explanation": "Sequential physical memory blocks allocated end-to-end without gaps, enabling arithmetic address resolution."
+      },
+      {
+        "term": "Random Access O(1)",
+        "explanation": "The capability to read or write any arbitrary element in constant time regardless of collection size."
+      },
+      {
+        "term": "Pointer Arithmetic",
+        "explanation": "Calculating exact target memory addresses directly using base address offset addition: base + (index * byte_size)."
+      },
+      {
+        "term": "Linear Shifting O(n)",
+        "explanation": "The operational requirement to move downstream elements by one slot during an insertion or deletion."
+      },
+      {
+        "term": "Spatial Cache Locality",
+        "explanation": "The hardware performance boost achieved when CPU cache lines prefetch adjacent memory words simultaneously."
+      },
+      {
+        "term": "Asymptotic Complexity",
+        "explanation": "The mathematical characterization of algorithmic growth rates as the problem size scales towards infinity."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Why does index lookup in an array execute in O(1) constant time?",
+        "model_answer": "Because elements reside in contiguous memory, allowing the CPU to calculate any address instantly via base pointer arithmetic without scanning."
+      },
+      {
+        "q": "What causes array insertion at index 0 to have an O(n) time complexity?",
+        "model_answer": "Inserting at index 0 requires every existing element in the array to be shifted one position to the right in physical memory."
+      },
+      {
+        "q": "Explain what spatial cache locality means in the context of arrays.",
+        "model_answer": "Spatial locality means accessing an array element automatically loads adjacent contiguous elements into the CPU cache, speeding up sequential reads."
+      },
+      {
+        "q": "Write down the pointer arithmetic formula to compute the address of element arr[i].",
+        "model_answer": "Address = Base_Address + (i * size_of_data_type)."
+      },
+      {
+        "q": "Why do linked lists exhibit poorer cache performance compared to arrays?",
+        "model_answer": "Linked list nodes are dynamically scattered across the heap with pointer indirection, leading to frequent CPU cache misses."
+      }
+    ],
+    "sample_student_answers": [
+      {
+        "question_index": 0,
+        "input": "Because memory is contiguous so the computer calculates base address plus index times size directly.",
+        "expected_verdict": "correct"
+      },
+      {
+        "question_index": 1,
+        "input": "Because we have to shift elements.",
+        "expected_verdict": "partial"
+      },
+      {
+        "question_index": 2,
+        "input": "Cache locality means storing files on the hard drive permanently.",
+        "expected_verdict": "wrong"
+      }
+    ]
+  },
+  {
+    "id": "tc-agentic-ai",
+    "title": "Agentic AI & Autonomous Architectures (Hinglish/English)",
+    "language": "Hindi-English (Hinglish)",
+    "langCode": "hi",
+    "raw_transcript": "Haan toh students, in today's lecture hum discuss karenge Agentic AI and Autonomous Agent architectures. Basically standard LLMs sirf prompt ka single response dete hain, but an AI Agent has an iterative execution loop. It uses the LLM as its reasoning brain to perceive environment, plan subtasks, and execute tools using the ReAct framework—Reason, Act, and Observe. Core components include Planning where complex goals are broken down into subtasks, Memory systems for short-term working context and long-term vector retrieval, and Tool Calling for interacting with external APIs, databases, and code sandboxes. Agar koi tool call fail hota hai, toh agent self-reflection se error evaluate karke autonomously course-correct karta hai bina human intervention ke.",
+    "clean_transcript": "Welcome students. In today's lecture we explore Agentic AI and Autonomous Architectures. Unlike standard generative models that respond to single-turn prompts, an AI agent operates in an iterative execution loop using the LLM as a central reasoning brain. Crucial components include: 1) Planning: decomposing abstract high-level objectives into prioritized subtasks. 2) Memory: managing working conversational context alongside episodic long-term vector storage. 3) Tool Calling: interfacing with APIs, databases, and code execution sandboxes via the ReAct framework (Reason, Act, Observe). 4) Self-Reflection & Error Recovery: evaluating intermediate outputs and autonomously self-correcting when tool invocations fail.",
+    "summary": "This lecture explores Agentic AI architectures, autonomous decision-making loops, and multi-agent systems. It examines how large language models function as reasoning brains that decompose complex objectives, execute external tools via the ReAct framework, and adapt through self-reflection.",
+    "concepts": [
+      {
+        "term": "Autonomous AI Agent",
+        "explanation": "A goal-driven system that uses an LLM as a central reasoning engine to perceive environments, formulate plans, and execute multi-step actions."
+      },
+      {
+        "term": "ReAct Pattern (Reason + Act)",
+        "explanation": "An iterative execution cycle where the agent reasons about its state, selects a tool action, and observes feedback before proceeding."
+      },
+      {
+        "term": "Tool Calling & Function Execution",
+        "explanation": "The capability of an agent to interface with APIs, databases, shell environments, and calculators to execute real-world tasks."
+      },
+      {
+        "term": "Planning & Goal Decomposition",
+        "explanation": "Breaking down abstract, complex objectives into prioritized sequences of executable subtasks."
+      },
+      {
+        "term": "Agent Memory Systems",
+        "explanation": "Maintaining immediate conversational history in working memory while retrieving episodic or semantic knowledge from vector storage."
+      },
+      {
+        "term": "Self-Reflection & Error Recovery",
+        "explanation": "An agent's ability to inspect tool failures, evaluate intermediate outputs, and dynamically correct course without human intervention."
+      },
+      {
+        "term": "Multi-Agent Orchestration",
+        "explanation": "Collaborative or hierarchical structures where specialized agents divide labor to solve intricate workflows."
+      }
+    ],
+    "questions": [
+      {
+        "q": "What fundamentally distinguishes an Agentic AI system from a standard passive LLM chatbot?",
+        "model_answer": "An agentic system can autonomously decompose goals, formulate plans, execute multi-step tool actions in an iterative loop, and self-correct based on observations, whereas a standard chatbot merely responds to single-turn prompts."
+      },
+      {
+        "q": "Explain the three phases of the ReAct framework and why the observation step is critical.",
+        "model_answer": "The three phases are Reason (thinking about current state), Act (executing a tool), and Observe (reading the result). The observation step is critical because it grounds the agent in reality and informs its subsequent reasoning."
+      },
+      {
+        "q": "What role does planning play in autonomous agent architectures?",
+        "model_answer": "Planning allows the agent to break down abstract, high-level objectives into structured, manageable subtasks and prioritize their execution order."
+      },
+      {
+        "q": "How do agents utilize short-term versus long-term memory?",
+        "model_answer": "Short-term memory maintains active session context and immediate execution history in the prompt window, while long-term memory leverages vector databases to recall past experiences and knowledge across sessions."
+      },
+      {
+        "q": "What is self-reflection in an AI agent, and why is it important?",
+        "model_answer": "Self-reflection is the process where an agent evaluates its own intermediate outputs or tool errors to understand what went wrong and adapt its strategy without human intervention."
+      }
+    ],
+    "sample_student_answers": [
+      {
+        "question_index": 0,
+        "input": "An agent has tools and loops to take actions autonomously instead of just replying to a message.",
+        "expected_verdict": "correct"
+      },
+      {
+        "question_index": 1,
+        "input": "ReAct stands for Reason and Act. We think and then do action.",
+        "expected_verdict": "partial"
+      },
+      {
+        "question_index": 4,
+        "input": "Self reflection means looking in a mirror.",
+        "expected_verdict": "wrong"
+      }
+    ]
+  }
+]

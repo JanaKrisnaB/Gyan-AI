@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+:root {
+  --color-paper: #F7F6F2;
+  --color-sheet: #FFFFFF;
+  --color-ink: #1B365D;
+  --color-graphite: #2C353E;
+  --color-margin-red: #B83A3A;
+  --color-rule-line: #D8E0E8;
+  --font-display: 'Bricolage Grotesque', 'Noto Sans Devanagari', 'Noto Sans Tamil', sans-serif;
+  --font-prose: 'Source Serif 4', 'Noto Sans Devanagari', 'Noto Sans Tamil', Georgia, serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-prose);
+    color: var(--color-graphite);
+    background-color: var(--color-paper);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  h1, h2, h3, h4, button, select, label, nav {
+    font-family: var(--font-display);
+  }
+
+  /* High-visibility keyboard focus ring */
+  *:focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+  }
+}
+
+/* Indian school notebook ruled lines: 32px (2rem) line height to suit Tamil & Devanagari ascenders/descenders */
+.notebook-ruled-area {
+  background-color: var(--color-sheet);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 31px,
+    var(--color-rule-line) 31px,
+    var(--color-rule-line) 32px
+  );
+  line-height: 32px;
+  background-attachment: local;
+}
+
+.font-display-ui {
+  font-family: var(--font-display);
+}
+
+.font-prose-indic {
+  font-family: var(--font-prose);
+  line-height: 1.8;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Safe area padding for mobile home bar and notches */
+.pb-safe {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

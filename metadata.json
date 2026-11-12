@@ -1,0 +1,6 @@
+{
+  "name": "Gyan Ai",
+  "description": "Voice tutor that listens to teacher lectures, understands code-mixed speech, and teaches it back with interactive explanations and voice quizzes.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
