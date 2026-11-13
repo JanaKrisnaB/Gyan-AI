@@ -15,7 +15,7 @@ Gyan AI is a voice tutor for code-mixed classrooms. It listens to a recorded lec
   </tr>
   <tr>
     <td width="50%"><img src="docs/attending_quiz.png" alt="Voice quiz question being answered"><br><sub><b>3. Voice quiz.</b> The question is spoken and you answer out loud.</sub></td>
-    <td width="50%"><img src="docs/audio_explanation.png" alt="Audio explanation of the lecture summary and key concepts"><br><sub><b>4. Listen.</b> The summary and key concepts read aloud by Timbre.</sub></td>
+    <td width="50%"><img src="docs/audio_explantion.png" alt="Audio explanation of the lecture summary and key concepts"><br><sub><b>4. Listen.</b> The summary and key concepts read aloud by Timbre.</sub></td>
   </tr>
 </table>
 
