@@ -1,4 +1,4 @@
-# Gyan Ai — The Code-Mixed Voice Lecture Tutor
+# Gyan AI — The Code-Mixed Voice Lecture Tutor
 
 **Gyan Ai** is an intelligent voice tutor that listens to teacher lectures, understands English, Hindi-English (Hinglish), and Tamil-English (Tanglish) code-mixed speech, and teaches the material back through conversational voice explanations and interactive voice quizzes.
 
