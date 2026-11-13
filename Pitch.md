@@ -2,8 +2,6 @@
 
 **Record your lecture. Revise it by voice. Quiz yourself out loud.**
 
-Great Indian AI Internship Challenge | Jana Krisna (JK), B.Tech CSE (AI & DS), SASTRA University
-
 ## The problem
 
 > "Vanakkam pa, inaiku Machine Learning session la Gradient Descent pathi clear ah paakalam."
@@ -35,7 +33,7 @@ Voice is the whole loop, speech in and speech out, not a feature added on top. Y
 
 ## What I built and tested
 
-A working app, tested on real recorded lectures: [list languages and noise conditions tested]. The tests exposed a real failure: Prisma heard "fine-tuning" as "free trading". I added an LLM correction pass that uses context to repair such errors, and the app keeps the original transcript next to the corrected one. API keys stay on the server, and saved lectures stay on the student's own device.
+A working app, tested on real recorded lectures: Noisy Tamil-English lecture, Hindi-english lecture, Tamil Lectures, English, Telugu, Hindi . I also added an LLM correction pass that uses context to repair errors, and the app keeps the original transcript next to the corrected one. API keys stay on the server, and saved lectures stay on the student's own device.
 
 Early feedback from classmates who tried it: it is really useful before exams for revising one particular concept, instead of skimming entire slide decks.
 
@@ -45,4 +43,4 @@ Students from school to college whose lessons mix English with Hindi, Tamil or a
 
 ## What's next
 
-Teachers publish a lecture to a class code so one recording helps every student. Ask the lecture a question by voice and hear an answer drawn only from what was taught. Revise weak quiz topics automatically. Add more of Prisma's languages, subject to Timbre's voice coverage.
+Teachers publish a lecture to a class code so one recording helps every student. Ask the lecture a question by voice and hear an answer drawn only from what was taught. Revise weak quiz topics automatically.
