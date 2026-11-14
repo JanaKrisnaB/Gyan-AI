@@ -4,7 +4,7 @@
 
 Gyan AI is a voice tutor for code-mixed classrooms. It listens to a recorded lecture in English, Hinglish (Hindi-English) or Tanglish (Tamil-English), then teaches the material back through spoken explanations and an interactive voice quiz. Built for the Great Indian AI Internship Challenge by Gnani AI.
 
-[One-page pitch](PITCH.pdf)
+[One-page pitch](PITCH.pdf) | [Live app](https://gyanai.ai.studio/) 
 
 ## See it in action
 
